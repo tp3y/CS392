@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate Us</title>
+    <style>
+        /* Reset default margin and padding */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Styles for the page layout */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .rate-us-container {
+            background-color: #fff;
+            max-width: 400px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .title {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Styles for the star rating system */
+        .stars {
+            display: flex;
+            justify-content: center;
+        }
+
+        .star {
+            font-size: 24px;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .star:hover {
+            color: #ffcc00;
+        }
+
+        /* Styles for the comment section */
+        .comment-section {
+            margin-top: 20px;
+        }
+
+        .comment-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .comment-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="rate-us-container">
+        <div class="title">Rate Us</div>
+        <div class="stars">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+        </div>
+        <div class="comment-section">
+            <label for="comment" class="comment-label">Leave a comment:</label>
+            <textarea id="comment" class="comment-input" rows="4"></textarea>
+        </div>
+        <button class="submit-button" id="submit-button">Submit</button>
+    </div>
+</body>
+</html>

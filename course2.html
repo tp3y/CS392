@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course 2</title>
+    <style>
+        /* Reset default margin and padding */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Styles for the side navigation bar */
+        .sidenav {
+            height: 100%;
+            width: 160px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #3498db;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidenav a {
+            padding: 15px 25px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            display: block;
+        }
+
+        .sidenav a:hover {
+            background-color: #185e8b;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding-left: 160px; /* Adjust the padding to make space for the side navigation bar */
+        }
+
+        .title {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #fff;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px;
+            width: 200px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+            font-size: 18px;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="sidenav">
+        <span class="navbar-title">Data Structuer</span>
+        <a href="home.html" class="home-button">Home</a>
+        <a href="profile.html" class="user-profile-button">User Profile</a>
+    </div>
+
+    <div class="title">Data Structuer</div>
+    <div class="button-container">
+        <a href="rate-us.html" class="button">Rate Us</a>
+        <a href="https://t.me/+oMdOLZs7Io8xZDM8" class="button">Discussion Board</a>
+        <a href="assignment2.html" class="button">Assignments</a>
+        <a href="#" class="button">Test Yourself</a>
+        <a href="#" class="button">Old Exams</a>
+        <a href="https://www.youtube.com/watch?v=xLetJpcjHS0&list=PLBlnK6fEyqRj9lld8sWIUNwlKfdUoPd1Y" class="button">Lectures</a>
+        <a href="articles2.html" class="button">Articles</a>
+    </div>
+</body>
+</html>

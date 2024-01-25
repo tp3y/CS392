@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles</title>
+    <style>
+        /* Reset default margin and padding */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Styles for the side navigation bar */
+        .sidenav {
+            height: 100%;
+            width: 160px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #3498db;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidenav a {
+            padding: 15px 25px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            display: block;
+        }
+
+        .sidenav a:hover {
+            background-color: #185e8b;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding-left: 160px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .article-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .article-button:hover {
+            background-color: #185e8b;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidenav">
+        <span class="navbar-title">Articles</span>
+        <a href="home.html" class="home-button">Home</a>
+        <a href="profile.html" class="user-profile-button">User Profile</a>
+    </div>
+
+    <h1>Articles</h1>
+    <ul>
+        <li>
+            <a href="article1.html" class="article-button">Article 1 - AI and Innovation in Engineering </a>
+        </li>
+        <!-- Add more articles here -->
+    </ul>
+</body>
+</html>

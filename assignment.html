@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments</title>
+    <style>
+        /* Reset default margin and padding */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Styles for the side navigation bar */
+        .sidenav {
+            height: 100%;
+            width: 160px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #3498db;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidenav a {
+            padding: 15px 25px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            display: block;
+        }
+
+        .sidenav a:hover {
+            background-color: #185e8b;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding-left: 160px; 
+        }
+
+        .title {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .sort-options {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .sort-options label {
+            margin-right: 10px;
+        }
+
+        .assignment-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .assignment {
+            background-color: #fff;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px;
+            width: 200px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .assignment:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="sidenav">
+        <span class="navbar-title">Assignments</span>
+        <a href="home.html" class="home-button">Home</a>
+        <a href="profile.html" class="user-profile-button">User Profile</a>
+    </div>
+
+    <div class="title">Assignments</div>
+    <div class="sort-options">
+        <label for="status-sort">Sort by Status:</label>
+        <select id="status-sort">
+            <option value="all">All</option>
+            <option value="solved">Solved</option>
+            <option value="unsolved">Unsolved</option>
+        </select>
+        <label for="date-sort">Sort by Date:</label>
+        <select id="date-sort">
+            <option value="ascending">Ascending</option>
+            <option value="descending">Descending</option>
+        </select>
+        <label for="university-sort">Sort by University:</label>
+        <select id="university-sort">
+            <option value="all">All</option>
+            <option value="ABC University">ABC University</option>
+            <option value="XYZ University">XYZ University</option>
+        </select>
+    </div>
+    <ul class="assignment-list">
+        <!-- assignment list here -->
+        <li class="assignment">
+            <a href="cs392.pdf">assignment 1 darft</a>
+            <p>Status: Unsolved</p>
+            <p>Date: 2023-10-15</p>
+            <p>University: ABC University</p>
+        </li>
+        <li class="assignment">
+            <a href="cs392 part 2.pdf">assignment 2 draft</a>
+            <p>Status: Unsolved</p>
+            <p>Date: 2023-10-20</p>
+            <p>University: XYZ University</p>
+        </li>
+        
+    </ul>
+    <script>
+        const assignmentList = document.querySelector(".assignment-list");
+        const assignments = assignmentList.querySelectorAll(".assignment");
+
+        const statusSort = document.getElementById("status-sort");
+        const dateSort = document.getElementById("date-sort");
+        const universitySort = document.getElementById("university-sort");
+
+        statusSort.addEventListener("change", sortAssignments);
+        dateSort.addEventListener("change", sortAssignments);
+        universitySort.addEventListener("change", sortAssignments);
+
+        function sortAssignments() {
+            const statusValue = statusSort.options[statusSort.selectedIndex].value;
+            const dateValue = dateSort.options[dateSort.selectedIndex].value;
+            const universityValue = universitySort.options[universitySort.selectedIndex].value;
+
+            const sortedAssignments = Array.from(assignments);
+
+            sortedAssignments.sort((a, b) => {
+                const statusA = a.querySelector("p:nth-of-type(1)").textContent.split(":")[1].trim();
+                const statusB = b.querySelector("p:nth-of-type(1)").textContent.split(":")[1].trim();
+
+                const dateA = new Date(a.querySelector("p:nth-of-type(2)").textContent.split(":")[1].trim());
+                const dateB = new Date(b.querySelector("p:nth-of-type(2)").textContent.split(":")[1].trim());
+
+                const universityA = a.querySelector("p:nth-of-type(3)").textContent.split(":")[1].trim();
+                const universityB = b.querySelector("p:nth-of-type(3)").textContent.split(":")[1].trim();
+
+                if (statusValue !== "all" && statusA !== statusValue) {
+                    return statusA.localeCompare(statusB);
+                }
+
+                if (dateValue === "ascending") {
+                    return dateA - dateB;
+                } else if (dateValue === "descending") {
+                    return dateB - dateA;
+                }
+
+                if (universityValue !== "all" && universityA !== universityValue) {
+                    return universityA.localeCompare(universityB);
+                }
+
+                return 0;
+            });
+
+            assignmentList.innerHTML = "";
+            sortedAssignments.forEach((assignment) => {
+                assignmentList.appendChild(assignment);
+            });
+        }
+    </script>
+</body>
+</html>

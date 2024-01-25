@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sign Up Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .container {
+    width: 90%;
+    padding: 16px;
+    background-color: white;
+    margin: 0 auto;
+}
+.al {
+    width: 20%;
+    height: inherit;
+    padding: 16px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 100px;
+    border: 1px solid black;
+    border-radius: 4px;
+    
+    
+    
+}
+    input[type=text], input[type=password], input[type=email],select{
+        width: 90%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    input[type=radio] {
+        margin-top: 8px;
+    }
+    .btn {
+        background-color: #3498db;
+        color: #fff;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+    .btn:hover {
+        opacity: 0.8;
+    }
+</style>
+</head>
+<body>
+    <fieldset allign="center" class="al">
+        <legend><h6>Alternative Learning Technique</h6></legend>
+<div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <label for="psw-confirm"><b>Confirm Password</b></label>
+    <input type="password" placeholder="Confirm Password" name="psw-confirm" required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="email" placeholder="Enter Email" name="email" required>
+    
+    <label for="phone-number"><b>Phone Number</b></label>
+    <input type="text" placeholder="Enter your number" name="pnum" required>
+
+    <label for="univ"><b>University</b></label>
+    <select name="univ" >
+        <option value="c">Chose your University</option>
+        <option value="IMSIU">imam muhammad ibn saud</option>
+    </select>
+    
+    <label for="gen"><b>Gender</b></label>
+    <input type="radio" name="gg" value="male">Male
+    <input type="radio" name="gg" value="female">female
+
+    <button type="button" class="btn" onclick="signUp()">Sign Up</button>
+</div>
+    </fieldset>
+
+  <script>
+
+function signUp() {
+
+    let uname = document.getElementsByName('uname')[0].value;
+
+    let psw = document.getElementsByName('psw')[0].value;
+
+    let pswConfirm = document.getElementsByName('psw-confirm')[0].value;
+
+    let email = document.getElementsByName('email')[0].value;
+
+    let pnum = document.getElementsByName('pnum')[0].value;
+
+    let univ = document.getElementsByName('univ')[0].value;
+
+    let gen = document.querySelector('input[name="gg"]:checked').value || 'not selected';
+
+
+    if (psw !== pswConfirm) {
+
+        alert('Passwords do not match');
+
+        return;
+
+    }
+    if(psw,pswConfirm=='')
+    alert('Password is null');
+
+
+
+
+        if (psw === pswConfirm &&psw,pswConfirm !=='') {
+
+            window.location.href = 'home.html';
+
+        } else {
+
+            alert('Failed to register user');
+
+        }
+
+    }
+
+
+
+</script>
+</body>
+</html>

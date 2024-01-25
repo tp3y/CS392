@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        /* Reset default margin and padding */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Styles for the side navigation bar */
+        .sidenav {
+            height: 100%;
+            width: 160px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #3498db;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidenav a {
+            padding: 15px 25px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            display: block;
+        }
+
+        .sidenav a:hover {
+            background-color: #185e8b;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding-left: 160px; /* Adjust the padding to make space for the side navigation bar */
+        }
+
+        .title {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .courses-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .course,
+        .draw-plan-container { /* Apply the styles to both courses and the draw plan container */
+            background-color: #fff;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px;
+            width: 250px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .course:hover,
+        .draw-plan-container:hover { /* Apply the hover effect to both courses and the draw plan container */
+            transform: scale(1.05);
+        }
+
+        .course-title {
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .course-description {
+            font-size: 16px;
+        }
+
+        .support-button {
+            padding: 15px 25px;
+            background-color: #3498db;
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        /* Ensure that all courses have a consistent class */
+        .course1, .course2, .course3 {
+            background-color: #0077ff;
+        }
+
+        /* Add the following styles for the draw-plan-container */
+        .draw-plan-container {
+            /* Adjust the width and margin to match other course containers */
+            width: 250px;
+            margin: 20px;
+        }
+
+        .plan-description {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidenav">
+        <span class="navbar-title">Alternative Learning Technique</span>
+        <a href="home.html" class="home-button">Home</a>
+        <a href="profile.html" class="user-profile-button">User Profile</a>
+        <a href="support.html" class="support-button">Support</a>
+    </div>
+
+    <div class="title">Explore Our Courses</div>
+    <div class="courses-container">
+        <a href="course1.html" class="course FUNDEMENTAL OF JAVA">
+            <div class="course-title">FUNDEMENTAL OF JAVA</div>
+            <div class="course-description">Learn about FUNDEMENTAL OF JAVA and its benefits.</div>
+        </a>
+        <a href="course2.html" class="course Data structer">
+            <div class="course-title">Data structers </div>
+            <div class="course-description">Discover DATA STRUCTERS and how it can help you succeed.</div>
+        </a>
+        <a href="course3.html" class= "course algorathims">
+            <div class="course-title">ALGORATHIMS</div>
+            <div class="course-description">Explore ALGORATHIMS to enhance your skills.</div>
+        </a>
+    </div>
+
+    <!-- New "Draw Plan" container -->
+    <a href="https://forms.gle/Y7hrifZWBCSncR5W6" class= "Draw Your Plan">
+    <div class="draw-plan-container">
+        <div class="title">Draw Your Plan</div>
+        <p class="plan-description">Create a personalized learning plan to achieve your goals. Use the drawing tool below to sketch out your roadmap.</p>
+        <!-- You can add your drawing tool or any content related to drawing the plan here -->
+    </div>
+</body>
+</html>
